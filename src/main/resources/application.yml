@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/testdb
+    username: root
+    password: Ppm407440!@
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+  application:
+    name: blog
+
+logging:
+  level:
+    root: ERROR                  # 기본 레벨을 ERROR로 설정
+    org.springframework.web: INFO  # 웹 관련 로그는 INFO 수준으로 설정
+    org.springframework: INFO     # 스프링 전체 로그 조절
+    com.example.blog: INFO       # 내 애플리케이션 패키지는 INFO 수준으로 설정
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    # 콘솔 로그 패턴 지정 (날짜, 스레드, 로그 레벨, 로거 이름, 메시지)
+
+server:
+  error:
+    include-stacktrace: never    # 스택 트레이스를 출력하지 않도록 설정
+    include-message: always      # 오류 메시지는 항상 포함
